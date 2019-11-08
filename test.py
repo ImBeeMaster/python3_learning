@@ -1,24 +1,15 @@
-#stuff = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
-def displayInventory(inventory):
-    print("Inventory:")
-    item_total = 0
-    for k, v in inventory.items():
+def pangram_test(arg1):
+    test_str = arg1
+    pan_list = []
+    for s in range(len(test_str)-1, -1, -1):
+        pan_list += test_str[s]
+        pan_str = ''.join(pan_list)
+    if pan_str.lower() == test_str.lower():
+        print("It is a pangram")
+    else:
+        print("It is not! a pangram")
+a = input("Enter a string:> ")
+pangram_test(a)
 
-        print(str(v) + ' ' + k)
-        item_total += v
-    print("Total number of items: " + str(item_total))
 
-#displayInventory(stuff)
-
-def addToInventory(inventory, addedItems):
-    for item in addedItems:
-        if item in inventory:
-            inventory[item] = int(inventory[item]) + 1
-        else:
-            inventory[item] = 1
-    return inventory
-
-inv = {'gold coin': 42, 'rope': 1}
-dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
-inv = addToInventory(inv, dragonLoot)
-displayInventory(inv)
+    if set(b).issubset(a):
